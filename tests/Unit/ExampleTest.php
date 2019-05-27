@@ -17,4 +17,12 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+    public function testAWS()
+    {
+        $this->markTestSkipped('OK!');
+        /** @var Sms $sms */
+        $sms = app(Sms::class);
+        $message = new Message('test from laravel 8=D');
+        $response = $sms->sendSms($message, '+886912345678');
+    }
 }
